@@ -4,4 +4,6 @@ import { buildResolvers } from './buildResolvers';
 import { buildWebpackConfig } from './buildWebpackConfig';
 import { buildDevServer } from './buildDevServer';
 
-export { buildPlugins, buildLoaders, buildResolvers, buildWebpackConfig, buildDevServer };
+export {
+  buildPlugins, buildLoaders, buildResolvers, buildWebpackConfig, buildDevServer,
+};

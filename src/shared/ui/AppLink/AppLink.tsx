@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './AppLink.module.scss';
 import { Link, LinkProps } from 'react-router-dom';
+import cls from './AppLink.module.scss';
 
 type AppLinkThemes = 'primary' | 'secondary';
 
@@ -16,7 +16,7 @@ export const AppLink = (props: AppLinkProps) => {
     theme = 'primary',
     ...otherProps
   } = props;
-  
+
   return (
     <Link
       to={to}

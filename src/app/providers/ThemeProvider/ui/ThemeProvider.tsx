@@ -15,7 +15,7 @@ export const ThemeProvider = ({ children }: Props) => {
       theme,
       setTheme,
     }),
-    [theme, setTheme]
+    [theme, setTheme],
   );
 
   return (
