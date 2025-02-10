@@ -8,7 +8,7 @@ interface PageErrorProps {
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
-  const { t } = useTranslation('pageError');
+  const { t } = useTranslation('translation');
 
   // eslint-disable-next-line no-restricted-globals
   const reloadPage = () => location.reload();
