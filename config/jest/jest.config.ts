@@ -6,30 +6,34 @@
 import path from 'path';
 
 export default {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "/tmp/jest_rs",
-
-  // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   testEnvironment: 'jsdom',
-  moduleDirectories: ['node_modules'],
-  modulePaths: ['<rootDir>src'],
-  coveragePathIgnorePatterns: ['/node_modules/'],
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  coveragePathIgnorePatterns: [
+    '\\\\node_modules\\\\',
+  ],
+  moduleFileExtensions: [
+    'js',
+    'jsx',
+    'ts',
+    'tsx',
+    'json',
+    'node',
+  ],
+  moduleDirectories: [
+    'node_modules',
+  ],
+  modulePaths: [
+    '<rootDir>src',
+  ],
+  testMatch: [
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+  ],
   rootDir: '../../',
-  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
-
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
@@ -127,6 +131,7 @@ export default {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
+  // setupFilesAfterEnv: [],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -146,7 +151,7 @@ export default {
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
-  //   "/node_modules/"
+  //   "\\\\node_modules\\\\"
   // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
@@ -169,8 +174,8 @@ export default {
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
-  //   "/node_modules/",
-  //   "\\.pnp\\.[^\\/]+$"
+  //   "\\\\node_modules\\\\",
+  //   "\\.pnp\\.[^\\\\]+$"
   // ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them

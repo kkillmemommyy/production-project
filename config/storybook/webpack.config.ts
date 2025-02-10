@@ -3,7 +3,7 @@ import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
-export default ({ config }: { config: webpack.Configuration }) => {
+export default ({ config }: {config: webpack.Configuration}) => {
   const paths: BuildPaths = {
     build: '',
     html: '',
@@ -11,8 +11,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
 
-  config.resolve?.modules?.push(paths.src);
-  config.resolve?.extensions?.push('.ts', '.tsx');
+  // @ts-ignore
+  config.resolve.modules.push(paths.src);
+  // @ts-ignore
+  config.resolve.extensions.push('.ts', '.tsx');
 
   // @ts-ignore
   // eslint-disable-next-line no-param-reassign
